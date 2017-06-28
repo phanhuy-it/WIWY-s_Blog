@@ -1,4 +1,4 @@
-			<!-- footer -->
+<?php /*?>			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 
 				<!-- copyright -->
@@ -27,4 +27,16 @@
 		</script>
 
 	</body>
+</html><?php */?>
+
+
+
+
+<div class="footer">
+	 <div class="container">
+	 <p>Copyrights © <?php echo date('Y'); ?> WIWY's Blog All rights reserved</p>
+	 </div>
+</div>
+
+</body>
 </html>
