@@ -34,7 +34,7 @@
 
 	<div class="footer">
 		 <div class="container">
-		 <p>Copyrights © <?php echo date('Y'); ?> - <?php bloginfo('name'); ?></p>
+		 <p>Copyrights © <?php echo date('Y'); ?> - <?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></p>
 		 </div>
 	</div>
 

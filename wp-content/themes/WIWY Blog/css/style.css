@@ -145,10 +145,11 @@ label {
 
 .content-grids {
     margin-top: 4em;
+    margin-bottom: 4em;
 }
 
 .post-info {
-    background: #fff;
+    background: #fdfdfd;
     padding: 2em;
 }
 
@@ -323,7 +324,7 @@ label {
 
 .about-content,
 .contact-content,
-.single {
+body .single {
     padding: 2em 0;
 }
 
@@ -530,9 +531,6 @@ label {
     text-align: justify;
 }
 
-.single-grid img {
-    width: 100%;
-}
 
 ul.comment-list {
     border: 1px solid #BAB6B6;
@@ -627,11 +625,31 @@ ul.comment-list img {
     font-family: 'Oswald', sans-serif;
 }
 
-
+.wp-pagenavi a, .wp-pagenavi span {
+    border: none;
+}
+.wp-pagenavi a:hover,
+.wp-pagenavi a:visited,
+.wp-pagenavi a:link {
+    text-decoration: none;
+}
+.wp-pagenavi .pages {
+    font-size: 14px;
+    color: #666;
+    margin-right: 10px;
+}
+.wp-pagenavi .page {
+    border: solid 1px #666;
+    line-height: 1em;
+    padding: 0 7px;
+}
 /*----responsive-menu-start---*/
 
 @media (min-width: 769px) {
-    .content {
+    .content,
+    .about-content,
+    body .single,
+    .contact-content {
         margin-top: 128px;
     }
     .br_style01 {
@@ -644,7 +662,10 @@ ul.comment-list img {
 }
 
 @media (min-width: 992px) {
-    .content {
+    .content,
+    .about-content,
+    body .single,
+    .contact-content {
         margin-top: 98px;
     }
     img {
@@ -653,13 +674,16 @@ ul.comment-list img {
 }
 
 @media (min-width: 1200px) {
-    .content {
+    .content,
+    .about-content,
+    body .single,
+    .contact-content {
         margin-top: 98px;
     }
 }
 
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
     .recent,
     .comments,
     .archives,
@@ -677,7 +701,10 @@ ul.comment-list img {
 
 }
 @media (max-width: 768px) {
-    .content {
+    .content,
+    .about-content,
+    body .single,
+    .contact-content {
         margin-top: 128px;
     }
     .br_style01 {
@@ -695,14 +722,20 @@ ul.comment-list img {
 }
 
 @media (max-width: 640px) {
-    .content {
+    .content,
+    .about-content,
+    body .single,
+    .contact-content {
         margin-top: 128px;
     }
 }
 
 @media (max-width: 480px) {
-    .content {
-        margin-top: 128px;
+    .content,
+    .about-content,
+    body .single,
+    .contact-content {
+        margin-top: 119px;
     }
     .logo {
       text-align: center;

@@ -19,22 +19,30 @@
 			 <div class="content-grids">
 				 <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 content-main">
 					 <div class="content-grid">
-					 	 <?php if(have_posts()): 
-				   		       while(have_posts()): the_post(); ?>	
-						  	
-						  	<div class="content-grid-info">
-								 <img src="<?php bloginfo('template_url'); ?>/images/post1.jpg" alt=""/>
-								 <div class="post-info">
-									 <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>  July 30, 2014 / 27 Comments</h4>
-									 <p><?php the_content(); ?></p>
-									 <a href="<?php the_permalink(); ?>"><span></span>READ MORE</a>
-								 </div>
-						 	</div>
-					     
-
-					     <?php endwhile; ?>
-              			 <?php endif; ?>	 
-						 
+					 	<?php
+						 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+						    $args = array_merge( $wp_query->query, 
+						    array(
+						        'posts_per_page'=>'3',
+						        'paged' =>$paged));
+						    query_posts( $args );
+					 		if(have_posts()) : 
+					 			while(have_posts()) : the_post();
+					 	?>
+							<div class="content-grid-info">
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('custom-size-01'); ?></a>
+								<div class="post-info">
+									<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>  <?php the_time('F j, Y') ?> / <?php comments_number('0 Comment','1 Comment'); ?></h4>
+									<p><?php the_excerpt(); ?></p>
+									<a href="<?php the_permalink(); ?>"><span></span>READ MORE</a>
+								</div>
+							</div>
+					 	<?php
+					 			endwhile;
+					 		endif;
+					 	?>
+					 	<?php wp_pagenavi(array( "posts_per_page" => "2" )); ?>
+						
 					 </div>
 				  </div>
 				  <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 content-right">
