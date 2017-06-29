@@ -32,11 +32,11 @@
 
 
 
-<div class="footer">
-	 <div class="container">
-	 <p>Copyrights © <?php echo date('Y'); ?> WIWY's Blog All rights reserved</p>
-	 </div>
-</div>
+	<div class="footer">
+		 <div class="container">
+		 <p>Copyrights © <?php echo date('Y'); ?> - <?php bloginfo('name'); ?></p>
+		 </div>
+	</div>
 
 </body>
 </html>

@@ -17,36 +17,27 @@
 	<div class="content">
 		 <div class="container">
 			 <div class="content-grids">
-				 <div class="col-md-8 content-main">
-					 <div class="content-grid">					 
-						 <div class="content-grid-info">
-							 <img src="<?php bloginfo('template_url'); ?>/images/post1.jpg" alt=""/>
-							 <div class="post-info">
-							 <h4><a href="single.html">Lorem ipsum dolor sit amet</a>  July 30, 2014 / 27 Comments</h4>
-							 <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis.</p>
-							 <a href="single.html"><span></span>READ MORE</a>
-							 </div>
-						 </div>
-						 <div class="content-grid-info">
-							 <img src="<?php bloginfo('template_url'); ?>/images/post2.jpg" alt=""/>
-							 <div class="post-info">
-							 <h4><a href="single.html">Lorem ipsum dolor sit amet</a>  July 30, 2014 / 27 Comments</h4>
-							 <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis.</p>
-							 <a href="single.html"><span></span>READ MORE</a>
-							 </div>
-						 </div>
-						 <div class="content-grid-info">
-							 <img src="<?php bloginfo('template_url'); ?>/images/post3.jpg" alt=""/>
-							 <div class="post-info">
-							 <h4><a href="single.html">Lorem ipsum dolor sit amet</a>  July 30, 2014 / 27 Comments</h4>
-							 <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis.</p>
-							 <a href="single.html"><span></span>READ MORE</a>
-							 </div>
-						 </div>
+				 <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 content-main">
+					 <div class="content-grid">
+					 	 <?php if(have_posts()): 
+				   		       while(have_posts()): the_post(); ?>	
+						  	
+						  	<div class="content-grid-info">
+								 <img src="<?php bloginfo('template_url'); ?>/images/post1.jpg" alt=""/>
+								 <div class="post-info">
+									 <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>  July 30, 2014 / 27 Comments</h4>
+									 <p><?php the_content(); ?></p>
+									 <a href="<?php the_permalink(); ?>"><span></span>READ MORE</a>
+								 </div>
+						 	</div>
+					     
 
+					     <?php endwhile; ?>
+              			 <?php endif; ?>	 
+						 
 					 </div>
 				  </div>
-				  <div class="col-md-4 content-right">
+				  <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 content-right">
 					 <div class="recent">
 						 <h3>RECENT POSTS</h3>
 						 <ul>
